@@ -5,7 +5,9 @@ public class test1 {
 
     public static void main(String[] args) {
 
-        testToString();
+        Fpp f2 = new Fpp(CANDIDATES, NUM_VOTERS);
+        f2.votingCycle();
+        System.out.println(f2.getVotesToCandidates());
     }
 
     public static void testToString() {
