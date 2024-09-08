@@ -1,7 +1,7 @@
 /**
  * First Past the Post Voting System
  */
-public class Fpp {
+public class Fpp implements VotingSystem {
 
     private String[] candidates; // list of all candidates
     private int numVoters; // number of total voters
@@ -13,15 +13,21 @@ public class Fpp {
     }
 
     public String toString() {
+        return getCandidates() + "\n" + getVoters();
+    }
+
+    public String getCandidates() {
         String formattedString = "List of Candidates\n";
 
         for (String i : candidates) {
             formattedString += i + "\n";
         }
 
-        formattedString += "\nNumber of Voters: " + numVoters + "\n";
-
         return formattedString;
+    }
+
+    public String getVoters() {
+        return "Number of Voters: " + numVoters;
     }
 
 }
