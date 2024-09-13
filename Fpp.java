@@ -57,6 +57,24 @@ public class Fpp implements VotingSystem {
     // Interface method 3
     public void winner() {
 
+        votingCycle();
+
+        int max = -1; // Impossible value
+        int curr = votesToCandidates[0];
+        int winIdx = 0;
+        for (int i = 0; i < votesToCandidates.length; i++) {
+            curr = votesToCandidates[i];
+            if (curr == max) {
+                System.out.println("No clear Winner please vote again or try different voting system");
+                break;
+
+            } else if (curr > max) {
+                max = curr;
+                winIdx = i;
+            }
+        }
+
+        System.out.println("Winner is: " + candidates[winIdx]);
     }
 
     public void votingCycle() {
